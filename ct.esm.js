@@ -1,4 +1,4 @@
-function ct(f = () => {}) {
+export default function ct(f = () => {}) {
     function argInfo(f = () => {}) {
         function getNestedParens(s = "") {
             let depth = 0;
