@@ -10,7 +10,6 @@ export default function ct(f = () => {}) {
                 if (depth == 0) return f
             }
         }
-        let aAn = (s = "") => ("aeiou".includes(s.slice(0, 1).toLowerCase()) ? "an" : "a")
         let funcSrc = f.toString();
         funcSrc = funcSrc.slice(funcSrc.indexOf("("))
         let a = getNestedParens(funcSrc).slice(1, -1)
@@ -31,6 +30,7 @@ export default function ct(f = () => {}) {
         }
         return a
     }
+    let aAn = (s = "") => ("aeiou".includes(s.slice(0, 1).toLowerCase()) ? "an" : "a")
     let a = argInfo(f);
     return (...args) => {
         for (let i in a) {
